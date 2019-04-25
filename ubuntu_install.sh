@@ -7,7 +7,8 @@ yes | sudo apt upgrade
 #Tool
 yes | sudo apt install git zsh tmux
 yes | sudo apt install python3-pip
-yes | sudo apt intsall remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice remmina-plugin-vnc remmina-plugin-xdmcp remmina-plugin-telepathy remmina-plugin-nx remmina-plugin-exec
+yes | sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice remmina-plugin-vnc remmina-plugin-xdmcp remmina-plugin-telepathy remmina-plugin-nx remmina-plugin-exec
+yes | sudo apt install guake
 
 ##Chrome Install
 curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
