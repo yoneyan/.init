@@ -1,5 +1,7 @@
 #!/bin/bash
 
+$USER = yonedayuto;
+
 yes | sudo apt update
 yes | sudo apt upgrade
 
@@ -21,6 +23,27 @@ sudo add-apt-repository ppa:fingerprint/fingerprint-gui
 yes | sudo apt update
 yes | sudo apt install libbsapi policykit-1-fingerprint-gui fingerprint-gui
 
+##Docker install
+yes | sudo apt-get install \
+        apt-transport-https \
+            ca-certificates \
+                curl \
+                    gnupg-agent \
+                        software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+yes | sudo apt update
+yes | sudo apt install docker-ce docker-ce-cli containerd.io
+sudo gpasswd -a $USER docker
+sudo chmod 666 /var/run/docker.sock
+
+##Docker-compose install
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+
+
 ##Neovim install
 yes | sudo apt install software-properties-common
 yes | sudo apt install python-software-properties
@@ -41,6 +64,7 @@ if [ ! -e ~/.config/nvim ];then
 fi
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+pip3 install --user pynvim
 pip3 install neovim
 
 #Config File Copy
