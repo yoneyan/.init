@@ -5,6 +5,11 @@ $USER = yonedayuto;
 yes | sudo apt update
 yes | sudo apt upgrade
 
+#Japanese -> English
+LANG=C xdg-user-dirs-gtk-update
+
+#Windows & Linux DualBoot
+sudo timedatectl set-local-rtc true
 
 #Tool
 yes | sudo apt install git zsh tmux
@@ -75,6 +80,4 @@ yes | cp init.vim ~/.config/nvim/init.vim
 #Bash -> Zsh
 chsh -s $(which zsh)
 
-#Japanese -> English
-LANG=C xdg-user-dirs-gtk-update
 
