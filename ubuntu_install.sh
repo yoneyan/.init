@@ -61,7 +61,7 @@ yes | sudo apt install python-dev python-pip python3-dev python3-pip
 
 #Zsh Setting
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 #neovim Setting
 if [ ! -e ~/.config/nvim ];then
