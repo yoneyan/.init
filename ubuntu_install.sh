@@ -37,7 +37,7 @@ yes | sudo apt-get install \
                         software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 yes | sudo apt update
 yes | sudo apt install docker-ce docker-ce-cli containerd.io
 sudo gpasswd -a $USER docker
@@ -53,7 +53,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 yes | sudo apt install software-properties-common
 yes | sudo apt install python-software-properties
 
-yes | sudo add-apt-repository ppa:neovim-ppa/stable
+yes | sudo add-apt-repository -y ppa:neovim-ppa/stable
 yes | sudo apt update
 yes | sudo apt install neovim
 

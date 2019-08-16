@@ -49,7 +49,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 yes | sudo apt install software-properties-common
 yes | sudo apt install python-software-properties
 
-yes | sudo add-apt-repository ppa:neovim-ppa/stable
+yes | sudo add-apt-repository -y ppa:neovim-ppa/stable
 yes | sudo apt update
 yes | sudo apt install neovim
 
