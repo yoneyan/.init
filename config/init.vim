@@ -53,8 +53,8 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
   endif
 "c deoplete"
-Plug 'zchee/deoplete-clang'
-let g:deoplete#enable_at_startup = 1
+"Plug 'zchee/deoplete-clang'
+"let g:deoplete#enable_at_startup = 1
 
 " Initialize plugin system
 call plug#end()

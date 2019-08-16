@@ -32,9 +32,7 @@ yes | sudo apt install libbsapi policykit-1-fingerprint-gui fingerprint-gui
 yes | sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 yes | curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 yes | sudo apt-key fingerprint 0EBFCD88
-yes | sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-$(lsb_release -cs) \
-stable"
+sudo su -c 'echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" >> /etc/apt/sources.list.d/docker.list'
 yes | sudo apt-get update
 yes | sudo apt install docker-ce docker-ce-cli containerd.io
 yes | sudo gpasswd -a $USER docker
