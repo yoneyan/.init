@@ -1,6 +1,6 @@
 #!/bin/bash
-
-$USER = yonedayuto;
+echo -n User Name?:
+read USER
 
 yes | sudo apt update
 yes | sudo apt upgrade
@@ -58,23 +58,3 @@ yes | sudo apt update
 yes | sudo apt install neovim
 
 yes | sudo apt install python-dev python-pip python3-dev python3-pip
-
-
-#neovim Setting
-if [ ! -e ~/.config/nvim ];then
-   mkdir ~/.config/nvim
-fi
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-pip3 install --user pynvim
-pip3 install neovim
-
-#Config File Copy
-yes | cp .tmux.conf ~/.tmux.conf
-yes | cp .zshrc ~/.zshrc
-yes | cp init.vim ~/.config/nvim/init.vim
-
-#Bash -> Zsh
-chsh -s $(which zsh)
-
-
