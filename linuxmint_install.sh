@@ -29,19 +29,16 @@ yes | sudo apt update
 yes | sudo apt install libbsapi policykit-1-fingerprint-gui fingerprint-gui
 
 ##Docker install
-yes | sudo apt-get install \
-        apt-transport-https \
-            ca-certificates \
-                curl \
-                    gnupg-agent \
-                        software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-yes | sudo apt update
-yes | sudo apt install docker-ce docker-ce-cli containerd.io
-sudo gpasswd -a $USER docker
-sudo chmod 666 /var/run/docker.sock
+yes | sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+yes | curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+yes | sudo apt-key fingerprint 0EBFCD88
+yes | sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+stable"
+yes | sudo apt-get update
+yes | sudo apt install docker-ce docker-ce-cli containerd.io                                                                                              
+yes | sudo gpasswd -a $USER docker                                                                                                                        yes | sudo chmod 666 /var/run/docker.sock
+
 
 ##Docker-compose install
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
