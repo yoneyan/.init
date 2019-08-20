@@ -5,9 +5,6 @@ read USER
 yes | sudo apt update
 yes | sudo apt upgrade
 
-#Japanese -> English
-LANG=C xdg-user-dirs-gtk-update
-
 #Windows & Linux DualBoot
 sudo timedatectl set-local-rtc true
 
@@ -16,6 +13,7 @@ yes | sudo apt install git zsh tmux
 yes | sudo apt install python3-pip
 yes | sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice remmina-plugin-vnc remmina-plugin-xdmcp remmina-plugin-telepathy remmina-plugin-nx remmina-plugin-exec
 yes | sudo apt install guake
+yes | sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils libguestfs-tools virt-manager
 
 ##Chrome Install
 curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

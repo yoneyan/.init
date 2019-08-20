@@ -27,3 +27,5 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #Bash -> Zsh
 chsh -s $(which zsh)
 
+#Japanese -> English
+LANG=C xdg-user-dirs-gtk-update
