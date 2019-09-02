@@ -52,3 +52,9 @@ yes | sudo apt update
 yes | sudo apt install neovim
 
 yes | sudo apt install python-dev python-pip python3-dev python3-pip
+
+#L2TP/IPSec Client
+yes | sudo apt-get install network-manager-l2tp-gnome network-manager-strongswan libstrongswan-standard-plugins libstrongswan-extra-plugins
+
+#openvpn
+yes | sudo apt install openvpn
