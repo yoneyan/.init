@@ -58,3 +58,8 @@ yes | sudo apt-get install network-manager-l2tp-gnome network-manager-strongswan
 
 #openvpn
 yes | sudo apt install openvpn
+
+#veracryptr
+yes|sudo add-apt-repository ppa:unit193/encryption
+yes|apt update
+yes|apt install veracrypt
