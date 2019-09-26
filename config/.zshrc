@@ -36,3 +36,6 @@ zstyle ':completion:*:default' menu select=2
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#neovim
+alias vi='nvim'
