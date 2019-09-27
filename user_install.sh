@@ -23,7 +23,7 @@ rm -rf ~/.config/nvim/init.vim
 #Config File Copy
 yes | ln -sf ~/.init/config/.tmux.conf ~/.tmux.conf
 yes | ln -sf ~/.init/config/.zshrc ~/.zshrc
-yes | ln -sf ~/.init/config/.netrc ~/.netrc
+yes | cp ~/.init/config/.netrc ~/.netrc
 yes | ln -sf ~/.init/config/init.vim ~/.config/nvim/init.vim
 
 #tmux
