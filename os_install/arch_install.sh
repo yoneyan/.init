@@ -3,30 +3,32 @@
 yes | sudo pacman --needed -Syuu
 yes | sudo pacman --needed -S yay
 yes | sudo pacman --needed -S fcitx \
-	                      fcitx-{gtk2,gtk3,qt5,mozc,configtool} \
+	                          fcitx-{gtk2,gtk3,qt5,mozc,configtool} \
                               adobe-source-han-sans-otc-fonts \
-			      remmina \
+                              remmina \
                               freerdp \
                               libvncserver \
-			      neovim \
-	                      zsh \
-			      tmux \
-			      veracrypt \
-			      qemu \
-			      libvirt \
-			      qemu-headless \
-			      ebtables \
-			      dnsmasq \
-			      virt-install
+                              neovim \
+                              zsh \
+                              tmux \
+                              veracrypt \
+                              qemu \
+                              libvirt \
+                              qemu-headless \
+                              ebtables \
+                              dnsmasq \
+                              virt-install \
+                              nautilus
 yes | sudo pacman --needed -S python \
-	                      python-pip \
+	              python-pip \
 			      clamav \
 			      powertop
 yes | yay --needed -S docker \
 	              docker-compose \
-                      fingerprint-gui \
+                  fingerprint-gui \
 	              slack-desktop \
-       	              inkdrop
+       	          inkdrop
 yay --needed -S google-chrome \
                 virtualbox
 
+sudo snap install intellij-idea-ultimate --classic 

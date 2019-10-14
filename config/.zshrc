@@ -32,7 +32,7 @@ zplug load
 zstyle ':completion:*:default' menu select=2
 
 #start tmux
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+#[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
