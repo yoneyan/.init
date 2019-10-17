@@ -27,8 +27,9 @@ yes | yay --needed -S docker \
 	              docker-compose \
                   fingerprint-gui \
 	              slack-desktop \
-       	          inkdrop
+       	          inkdrop \
+                  networkmanager-l2tp
 yay --needed -S google-chrome \
                 virtualbox
 
-sudo snap install intellij-idea-ultimate --classic 
+yay --needed -S install jetbrains-toolbox 
