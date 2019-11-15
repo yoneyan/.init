@@ -39,3 +39,7 @@ zstyle ':completion:*:default' menu select=2
 
 #neovim
 alias vi='nvim'
+
+#Browser
+export BROWSER="/usr/bin/google-chrome-stable"
+#
