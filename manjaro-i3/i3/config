@@ -33,7 +33,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id ~/.init/script/rofi_launch.sh 
+bindsym $mod+d exec --no-startup-id ~/.init/manjaro-i3/rofi/launch.sh 
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu

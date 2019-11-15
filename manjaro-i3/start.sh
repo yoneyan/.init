@@ -28,13 +28,13 @@ rm -rf ~/.i3/config
 mkdir ~/.config/polybar
 
 #Config File Copy
-yes | ln -sf ~/.init/base-config/.tmux.conf ~/.tmux.conf
-yes | ln -sf ~/.init/base-config/.zshrc ~/.zshrc
-yes | cp ~/.init/base-config/.netrc ~/.netrc
-yes | ln -sf ~/.init/base-config/init.vim ~/.config/nvim/init.vim
-yes | ln -sf i3/config ~/.i3/config
-yes | ln -sf compton/compton.conf ~/.config/compton.conf
-yes | ln -sf polybar/config ~/.config/polybar/config
+yes | ln -sf ~/.init/base_config/.tmux.conf ~/.tmux.conf
+yes | ln -sf ~/.init/base_config/.zshrc ~/.zshrc
+yes | cp ~/.init/base_config/.netrc ~/.netrc
+yes | ln -sf ~/.init/base_config/init.vim ~/.config/nvim/init.vim
+yes | ln -sf ~/.init/manjaro-i3/i3/config ~/.i3/config
+yes | ln -sf ~/.init/manjaro-i3/compton/compton.conf ~/.config/compton.conf
+yes | ln -sf ~/.init/manjaro-i3/polybar/config ~/.config/polybar/config
 yes | cp polybar/launch.sh ~/.config/polybar/launch.sh
 
 #tmux
