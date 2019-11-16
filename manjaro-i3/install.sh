@@ -18,7 +18,10 @@ yes | sudo pacman --needed -S fcitx \
                               ebtables \
                               dnsmasq \
                               virt-install \
-                              nautilus
+                              nautilus \
+                              terminator \
+                              polybar \
+                              rofi
 yes| sudo pacman -S fcitx-im fcitx-configtool fcitx-mozc fcitx-gtk2 fcitx-gtk3 fcitx-qt5 adobe-source-han-sans-jp-fonts
 
 yes | sudo pacman --needed -S python \
@@ -30,6 +33,6 @@ yes | yay --needed -S docker \
                   fingerprint-gui \
 	              slack-desktop \
        	          inkdrop \
-                  networkmanager-l2tp \
+                  networkmanager-l2tp
+yay --needed -S google-chrome \
                   jetbrains-toolbox
-yay --needed -S google-chrome-stable \
