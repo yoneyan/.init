@@ -321,7 +321,7 @@ ramp-headphones-1 = 
 
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = AC
 full-at = 98
 
