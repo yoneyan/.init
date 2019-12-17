@@ -1,4 +1,7 @@
 #!/bin/bash
 
-yes | sudo pacman --needed -S terminator \
-                              libmpdclient
+yes | sudo pacman --needed -S libmpdclient \
+			      alacritty
+
+yay --needed -S hyper \
+	        powerline-go

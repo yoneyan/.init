@@ -1,3 +1,6 @@
 #!/bin/bash
 
-yes | sudo pacman -S gimp 
+yes | sudo pacman --needed -S gimp \
+	                      hugo
+
+yay --needed -S slack-desktop
