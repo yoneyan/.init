@@ -1,0 +1,16 @@
+# .xprofile
+# vim:ft=sh
+# lightdm sources this file at boot
+# as well as our own xinitrc with startx
+
+export XDG_CONFIG_HOME=$HOME/.config
+
+export XMODIFIERS="@im=fcitx"
+export XMODIFIER="@im=fcitx"
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export DefaultIMModule=fcitx
+
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
