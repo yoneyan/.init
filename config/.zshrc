@@ -41,18 +41,17 @@ setopt correct
 #--------
 #zplugin
 source ~/.zplugin/bin/zplugin.zsh
+autoload -Uz _zplugin
 #plugin add
 #zsh-autosuggestions
 zplugin light zsh-users/zsh-autosuggestions
 #completions
-zplugin light zsh-users/zsh-completions
+zplugin load zsh-users/zsh-completions
 zplugin light chrissicool/zsh-256color
-zplugin light zsh-users/zsh-completions
-zplugin snippet OMZ::plugins/git/git.plugin.zsh
-zplugin snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
-zplugin snippet OMZ::plugins/minikube/minikube.plugin.zsh
-zplugin snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
-zplugin snippet OMZ::plugins/archlinux/archlinux.plugin.zsh
+zplugin snippet 'OMZ::lib/completion.zsh'
+zplugin snippet 'OMZ::lib/compfix.zsh'
+#github
+zplugin snippet 'OMZ::plugins/github/github.plugin.zsh'
 #history
 zplugin light zsh-users/zsh-history-substring-search
 #fast-syntax-highlighting
