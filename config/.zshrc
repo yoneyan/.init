@@ -1,6 +1,6 @@
 #powerline-go
 function powerline_precmd() {
-    PS1="$($GOPATH/bin/powerline-go -error $? -shell zsh)"
+    PS1="$($GOPATH/bin/powerline-go -condensed -cwd-max-depth 3 -error $? -shell zsh)"
 }
 
 function install_powerline_precmd() {
@@ -24,3 +24,5 @@ export BROWSER="/usr/bin/google-chrome-stable"
 
 #ls 
 alias ll='ls -la'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
