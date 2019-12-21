@@ -15,3 +15,11 @@ for f in install/arch/client/*;do
     echo -------------install $cmd ------------------
     $cmd
 done
+
+systemctl enable tlp
+systemctl enable tlp-sleep
+
+sudo cp ~/.init/config/logind.conf /etc/systemd/logind.conf
+sudo cp ~/.init/config/tlp /etc/default/tlp
+
+sudo cp ~/.init/script/lte.sh /etc/profile.d/
