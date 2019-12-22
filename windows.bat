@@ -3,10 +3,10 @@ rem choco install
 
 choco install -y steam
 choco install -y slack
-choco -y  discord
-choco -y vnc-viewer
-choco -y teraterm wireshark veracrypt musicbee mp3tag origin
-choco -y firefox
+choco install -y  discord
+choco install -y vnc-viewer
+choco install -y teraterm wireshark veracrypt musicbee mp3tag origin
+choco install -y firefox
 
 rem vscode install
 code --install-extension ms-vscode.powershell
