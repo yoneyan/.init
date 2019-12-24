@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#locale
+sudo localectl set-locale LANG=en_US.UTF-8
+
+#Clock
+sudo timedatectl set-local-rtc true
+
+#update
 sudo pacman -Syuu
 
 #i3lock download
@@ -19,9 +26,7 @@ for f in install/arch/client/*;do
 done
 
 systemctl enable tlp
-systemctl enable tlp-sleep
 
-sudo mv ~/.config/jgmenu ~/.config/jgmenu.bak
 
 sudo cp ~/.init/config/logind.conf /etc/systemd/logind.conf
 
