@@ -449,7 +449,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>google-chrome-stable</command>
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="W-e">
@@ -503,7 +503,7 @@
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-          <command>rofr.sh -r</command>
+          <command>sh ~/.config/rofi/launch.sh</command>
       </action>
     </keybind>
     <keybind key="A-F2">
