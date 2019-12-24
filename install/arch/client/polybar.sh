@@ -1,5 +1,7 @@
 #!/bin/bash
 
+yes | sudo pacman -S --needed polybar
+
 git clone https://github.com/yoneyan/polybar-themes ~/git/polybar-themes
 
 cp -r ~/git/polybar-themes/polybar ~/.config/

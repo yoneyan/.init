@@ -7,3 +7,7 @@ yes | sudo pacman --needed -S yay \
 			      
 
 yay --needed -S i3lock-fancy-git
+
+
+sudo systemctl start NetworkManager
+sudo systemctl enable NetworkManager
