@@ -37,3 +37,7 @@ cp -r ~/.init/config/alacritty ~/.config
 cp -r ~/.init/config/.netrc ~/.netrc
 cp ~/.init/config/.xprofile ~/.xprofile
 cp ~/.init/config/picom.conf ~/.config/picom.conf
+
+#profile
+sudo cp ~/.init/profile.png /var/lib/AccountsService/users/yonedayuto
+sudo chmod 644 /var/lib/AccountsService/users/yonedayuto
