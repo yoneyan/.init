@@ -6,10 +6,9 @@
 #~/.screenlayout/dual-head.sh
 
 ### Required for xfce settings to work
-sleep 0.5; xfsettingsd &
 
 ### compositor
-sleep 1; manjaro-compositor --start &
+picom --config ~/.config/picom.conf &
 
 ### launch thunar in daemon mode for faster startup
 ### comment if you would rather use pcmanfm
@@ -35,7 +34,7 @@ manjaro-conky-session &
 sleep 1; volumeicon &
 
 ## skippy windowswitcher
-skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
+skippy-xd --config ~/.config/skippy-xd.rc --start-daemon &
 
 ## super key for menu
 xcape -e 'Super_L=Alt_L|F1' &
@@ -52,3 +51,6 @@ xdg-user-dirs-gtk-update &
 
 ### Sleep
 xss-lock dm-tool switch-to-greeter&
+
+###fcitx
+fcitx-autostart

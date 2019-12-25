@@ -19,7 +19,7 @@
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>Manjaro-Openbox-Matcha-dark-sea</name>
+    <name>Arc-Darker</name>
     <titleLayout>NLIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
@@ -213,15 +213,8 @@
       </action>
     </keybind>
     <keybind key="W-Tab">
-      <action name="NextWindow">
-        <allDesktops>yes</allDesktops>
-        <finalactions>
-          <action name="SendToDesktop">
-            <desktop>1</desktop>
-          </action>
-          <action name="focus"/>
-          <action name="raise"/>
-        </finalactions>
+      <action name="Execute">
+        <command>skippy-xd --config ~/.config/skippy-xd.rc</command>
       </action>
     </keybind>
     <keybind key="C-A-Right">
@@ -503,7 +496,7 @@
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-          <command>sh ~/.config/rofi/launch.sh</command>
+        <command>sh ~/.config/rofi/launch.sh</command>
       </action>
     </keybind>
     <keybind key="A-F2">
@@ -513,7 +506,7 @@
     </keybind>
     <keybind key="A-F3">
       <action name="Execute">
-        <command>i3lock-fancy</command>
+        <command>dm-tool switch-to-greeter</command>
       </action>
     </keybind>
     <keybind key="A-F4">
