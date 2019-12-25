@@ -35,4 +35,5 @@ cp -r ~/.init/config/xfce4 ~/.config
 cp -r ~/.init/config/openbox ~/.config
 cp -r ~/.init/config/alacritty ~/.config
 cp -r ~/.init/config/.netrc ~/.netrc
-cp -r ~/.init/config/.xprofile ~/.xprofile
+cp ~/.init/config/.xprofile ~/.xprofile
+cp ~/.init/config/picom.conf ~/.config/picom.conf
