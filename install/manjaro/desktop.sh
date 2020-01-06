@@ -19,3 +19,4 @@ yes | sudo pacman -S --needed xorg-server \
                               fingerprint-gui \
                               nitrogen \
                               picom \
+                              xfce4-screenshooter
