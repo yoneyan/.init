@@ -37,12 +37,16 @@ setopt hist_verify
 setopt hist_expand
 #command correction
 setopt correct
+#auto move directory
+setopt auto_cd
 
-#--------
+#-------
 #zplugin
 source ~/.zplugin/bin/zplugin.zsh
 autoload -Uz _zplugin
+
 #plugin add
+zplugin load momo-lab/zsh-abbrev-alias
 # Two regular plugins loaded without tracking.
 zplugin light zsh-users/zsh-autosuggestions
 zplugin light zdharma/fast-syntax-highlighting
@@ -53,6 +57,7 @@ zplugin load zdharma/history-search-multi-word
 # Load the pure theme, with zsh-async library that's bundled with it.
 #zplugin ice pick"async.zsh" src"pure.zsh"
 #zplugin light sindresorhus/pure
+zplugin load "mafredri/zsh-async"
 
 # Binary release in archive, from GitHub-releases page.
 # After automatic unpacking it provides program "fzf".
@@ -81,8 +86,11 @@ zplugin light vim/vim
 zplugin ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
 zplugin light tj/git-extras
 
-zplugin snippet 'OMZ::lib/completion.zsh'
+#zplugin snippet 'OMZ::lib/completion.zsh'
 zplugin snippet 'OMZ::lib/compfix.zsh'
+zplugin load "zsh-users/zsh-completions"
+zplugin load "chrissicool/zsh-256color"
+
 #github
 zplugin snippet 'OMZ::plugins/github/github.plugin.zsh'
 zplugin snippet 'OMZ::plugins/git/git.plugin.zsh'
@@ -103,5 +111,13 @@ export BROWSER="/usr/bin/google-chrome-stable"
 
 #ls 
 alias ll='ls -la'
+
+#update
+alias up='sudo pacman -Syuu'
+
+#LTE
+alias lteup='sh ~/.init/script/lte_mineo_start.sh'
+alias ltedown='sh ~/.init/script/lte_mineo_stop.sh'
+alias lte='sh ~/.init/script/lte.sh'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
