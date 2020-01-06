@@ -13,13 +13,7 @@ sudo pacman -Syuu
 git clone https://github.com/yoneyan/i3lock-fancy ~/i3lock
 
 #standard install
-for f in install/arch/common/*;do
-    cmd=`echo sh $f`
-    echo -------------install $cmd ------------------
-    $cmd
-done
-
-for f in install/arch/client/*;do
+for f in install/manjaro/*;do
     cmd=`echo sh $f`
     echo -------------install $cmd ------------------
     $cmd
@@ -30,7 +24,7 @@ systemctl enable tlp
 
 sudo cp ~/.init/config/logind.conf /etc/systemd/logind.conf
 
-mv ~/.config/xfce4 ~/.config/xfce4.bak
+rm -rf ~/.config/xfce4
 cp -r ~/.init/config/xfce4 ~/.config
 cp -r ~/.init/config/openbox ~/.config
 cp -r ~/.init/config/alacritty ~/.config
