@@ -412,12 +412,12 @@
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>xbacklight +10</command>
+        <command>xbacklight +3</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>xbacklight -10</command>
+        <command>xbacklight -3</command>
       </action>
     </keybind>
     <keybind key="Print">
@@ -447,7 +447,7 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>xed</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="C-A-m">
