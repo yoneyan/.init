@@ -23,7 +23,12 @@ colors
 #bind
 bindkey -v
 #completions
-autoload -Uz compinit
+autoload -Uz compinit; compinit
+setopt auto_list
+setopt auto_menu
+zstyle ':completion:*:default' menu select=1
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #history
 HISTFILE=~/.zsh_history
 export HISTSIZE=1000
@@ -102,6 +107,10 @@ zplugin light zdharma/fast-syntax-highlighting
 #source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 #zsh-completions
 #fpat=(~/.zsh/zsh-completions/src $fpath)
+zplugin light paulirish/git-open
+zplugin light mollifier/cd-gitroot
+autoload -Uz cd-gitroot
+
 
 #neovim
 alias vi='nvim'
@@ -119,5 +128,11 @@ alias up='sudo pacman -Syuu'
 alias lteup='sh ~/.init/script/lte_mineo_start.sh'
 alias ltedown='sh ~/.init/script/lte_mineo_stop.sh'
 alias lte='sh ~/.init/script/lte.sh'
+
+#cd-gitroot
+alias c='cd-gitroot'
+
+#shimachan
+alias shimachan='firefox http://dogwood.is.oit.ac.jp/'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
