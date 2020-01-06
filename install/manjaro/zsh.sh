@@ -7,3 +7,5 @@ git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin
 
 rm ~/.zshrc
 cp ~/.init/config/.zshrc ~/.zshrc
+
+yay -S --needed peco
