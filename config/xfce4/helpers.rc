@@ -1,5 +1,4 @@
-TerminalEmulator=custom-TerminalEmulator
-MailReader=thunderbird
 FileManager=Thunar
+WebBrowser=firefox
+MailReader=thunderbird
 
-WebBrowser=google-chrome
