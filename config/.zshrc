@@ -1,6 +1,6 @@
 #powerline-go
 function powerline_precmd() {
-    PS1="$($GOPATH/bin/powerline-go -condensed -cwd-max-depth 3 -error $? -shell zsh)"
+    PS1="$(~/go/bin/powerline-go -condensed -cwd-max-depth 3 -error $? -shell zsh)"
 }
 
 function install_powerline_precmd() {
@@ -47,8 +47,8 @@ setopt auto_cd
 
 #-------
 #zplugin
-source ~/.zplugin/bin/zplugin.zsh
-autoload -Uz _zplugin
+source ~/.zinit/bin/zinit.zsh
+autoload -Uz _zinit
 
 #plugin add
 zplugin load momo-lab/zsh-abbrev-alias
@@ -136,3 +136,4 @@ alias c='cd-gitroot'
 alias shimachan='firefox http://dogwood.is.oit.ac.jp/'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+### End of Zinit's installer chunk
