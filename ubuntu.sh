@@ -17,11 +17,12 @@ yes | sudo apt install mozc fcitx-mozc
 yes | sudo apt install npm golang
 sudo npm install -g @angular/cli
 #Tool
-yes | sudo apt install git zsh tmux thunderbird
+yes | sudo apt install git zsh tmux thunderbird vlc filezilla gnome-calendar 
 yes | sudo apt install python3-pip
 yes | sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice remmina-plugin-vnc remmina-plugin-xdmcp remmina-plugin-nx remmina-plugin-exec
 yes | sudo apt install guake
-
+yes | snap install discord
+yes | snap install ao
 ##Chrome Install
 curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 yes | echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
