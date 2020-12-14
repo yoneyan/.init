@@ -12,10 +12,12 @@ LANG=C xdg-user-dirs-gtk-update
 sudo timedatectl set-local-rtc true
 
 #Japanese Tool
-yes | sudo apt install mozc fcitx-mozc
+yes | sudo apt install fcitx-mozc
 #Programing Tool
 yes | sudo apt install npm golang
 sudo npm install -g @angular/cli
+#Disk Took
+sudo apt-get -y install baobab
 #Tool
 yes | sudo apt install git zsh tmux thunderbird vlc filezilla gnome-calendar 
 yes | sudo apt install python3-pip
@@ -25,7 +27,7 @@ yes | snap install discord
 yes | snap install ao
 ##Chrome Install
 curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-yes | echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+yes | sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 yes | sudo apt update
 yes | sudo apt install google-chrome-stable
 
@@ -53,6 +55,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 cp ~/.init/config/.zshrc ~/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 
+go get github.com/justjanne/powerline-go
+
 ##Neovim install
 yes | sudo apt install software-properties-common
 yes | sudo apt install python-software-properties
@@ -63,3 +67,9 @@ yes | sudo apt install neovim
 
 yes | sudo apt install python-dev python-pip python3-dev python3-pip
 
+##copy Config
+cp -r ~/.init/config/.netrc ~/.netrc
+cp ~/.init/config/.xprofile ~/.xprofile
+cp -r ~/.init/config/.zshrc ~/.zshrc
+mkdir ~/.config/nvim
+cp -r ~/.init/config/init.vim ~/.config/nvim/init.vim
