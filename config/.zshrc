@@ -118,11 +118,16 @@ alias vi='nvim'
 #Browser
 export BROWSER="/usr/bin/google-chrome-stable"
 
+#Go bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+
 #ls 
 alias ll='ls -la'
 
 #update
-alias up='sudo pacman -Syuu'
+alias up='sudo apt update -y && sudo apt upgrade -y'
 
 #LTE
 alias lteup='sh ~/.init/script/lte_mineo_start.sh'
