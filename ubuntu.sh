@@ -58,14 +58,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/i
 go get github.com/justjanne/powerline-go
 
 ##Neovim install
-yes | sudo apt install software-properties-common
-yes | sudo apt install python-software-properties
-
-yes | sudo add-apt-repository -y ppa:neovim-ppa/stable
-yes | sudo apt update
 yes | sudo apt install neovim
 
 yes | sudo apt install python-dev python-pip python3-dev python3-pip
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 
 ##copy Config
 cp -r ~/.init/config/.netrc ~/.netrc
