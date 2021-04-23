@@ -23,11 +23,10 @@ yes | sudo apt install git zsh tmux thunderbird vlc filezilla gnome-calendar
 yes | sudo apt install python3-pip
 yes | sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice remmina-plugin-vnc remmina-plugin-xdmcp remmina-plugin-nx remmina-plugin-exec
 yes | sudo apt install guake
-yes | snap install discord
-yes | snap install ao
+yes | sudo apt install powertop tlp tlp-rdw
 ##Chrome Install
-curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-yes | sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 yes | sudo apt update
 yes | sudo apt install google-chrome-stable
 
@@ -61,7 +60,7 @@ go get github.com/justjanne/powerline-go
 ##Neovim install
 yes | sudo apt install neovim
 
-yes | sudo apt install python-dev python-pip python3-dev python3-pip
+yes | sudo apt install python-dev python3-dev python3-pip
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -73,3 +72,16 @@ cp ~/.init/config/.xprofile ~/.xprofile
 cp -r ~/.init/config/.zshrc ~/.zshrc
 mkdir ~/.config/nvim
 cp -r ~/.init/config/init.vim ~/.config/nvim/init.vim
+
+# tlp
+sudo tlp start
+
+#
+chsh -s /bin/zsh
+
+# Pulse Secure
+cd $HOME/Downloads/ && wget http://webdev.web3.technion.ac.il/docs/cis/public/ssl-vpn/ps-pulse-ubuntu-debian.deb
+
+cd $HOME/Downloads
+sudo apt install libnss3-tools && sudo dpkg -i ps-pulse-ubuntu-debian.deb
+
