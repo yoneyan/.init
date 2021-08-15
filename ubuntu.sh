@@ -98,3 +98,6 @@ yes | sudo apt install code
 
 # mariaDB
 yes | sudo apt -y install mariadb-server mariadb-backup
+
+# VPN
+yes | sudo apt -y install network-manager-l2tp-gnome network-manager-openconnect-gnome network-manager-openvpn-gnome network-manager-pptp-gnome network-manager-ssh-gnome network-manager-strongswan network-manager-fortisslvpn-gnome
