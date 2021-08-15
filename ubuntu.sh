@@ -104,3 +104,7 @@ yes | sudo apt -y install network-manager-l2tp-gnome network-manager-openconnect
 
 # KVM
 yes | sudo apt-get install virt-manager
+
+# inotify
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
