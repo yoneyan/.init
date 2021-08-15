@@ -89,10 +89,12 @@ sudo apt install libnss3-tools && sudo dpkg -i ps-pulse-ubuntu-debian.deb
 sudo apt install veracrypt
 
 # vscode
-sudo apt update
-sudo apt install software-properties-common apt-transport-https wget
+yes | sudo apt install software-properties-common apt-transport-https wget
 cd /tmp
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt update
-sudo apt install code
+yes | sudo apt update
+yes | sudo apt install code
+
+# mariaDB
+yes | sudo apt -y install mariadb-server
