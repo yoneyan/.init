@@ -84,3 +84,5 @@ cd $HOME/Downloads/ && wget http://webdev.web3.technion.ac.il/docs/cis/public/ss
 cd $HOME/Downloads
 sudo apt install libnss3-tools && sudo dpkg -i ps-pulse-ubuntu-debian.deb
 
+# veracrypt
+sudo apt install veracrypt
