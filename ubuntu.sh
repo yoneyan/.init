@@ -25,7 +25,6 @@ yes | sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-
 yes | sudo apt install guake
 yes | sudo apt install powertop tlp tlp-rdw
 ##Chrome Install
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 yes | sudo apt update
 yes | sudo apt install google-chrome-stable
