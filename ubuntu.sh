@@ -15,7 +15,7 @@ sudo timedatectl set-local-rtc true
 yes | sudo apt install fcitx-mozc
 #Programing Tool
 yes | sudo apt install npm golang
-sudo npm install -g @angular/cli
+sudo npm install -g yarn
 #Disk Took
 sudo apt-get -y install baobab
 #Tool
@@ -101,3 +101,6 @@ yes | sudo apt -y install mariadb-server mariadb-backup
 
 # VPN
 yes | sudo apt -y install network-manager-l2tp-gnome network-manager-openconnect-gnome network-manager-openvpn-gnome network-manager-pptp-gnome network-manager-ssh-gnome network-manager-strongswan network-manager-fortisslvpn-gnome
+
+# KVM
+yes | sudo apt-get install virt-manager
