@@ -97,4 +97,4 @@ yes | sudo apt update
 yes | sudo apt install code
 
 # mariaDB
-yes | sudo apt -y install mariadb-server
+yes | sudo apt -y install mariadb-server mariadb-backup
