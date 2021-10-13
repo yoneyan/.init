@@ -1,0 +1,9 @@
+[user]
+	useConfigOnly = true
+
+[includeIf "gitdir:~/github/"]
+	path = .gitconfig_github
+[includeIf "gitdir:~/.init/"]
+	path = .gitconfig_github
+[includeIf "gitdir:~/homenoc/"]
+	path = .gitconfig_homenoc
