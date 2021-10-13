@@ -1,21 +1,3 @@
-#powerline-go
-function powerline_precmd() {
-    PS1="$(~/go/bin/powerline-go -condensed -cwd-max-depth 3 -error $? -shell zsh)"
-}
-
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
-
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
-
 # fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
 fbr() {
   local branches branch
@@ -158,3 +140,6 @@ alias shimachan='firefox http://dogwood.is.oit.ac.jp/'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 ### End of Zinit's installer chunk
+
+
+PS1="%{$fg[cyan]%}[${USER}@${HOST%%.*} %1~]%(!.#.$)${reset_color} "
