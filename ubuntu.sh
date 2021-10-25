@@ -97,6 +97,9 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 yes | sudo apt update
 yes | sudo apt install code
 
+# Docker buildx
+docker run --privileged --rm tonistiigi/binfmt --install all
+
 # mariaDB
 yes | sudo apt -y install mariadb-server mariadb-backup
 
