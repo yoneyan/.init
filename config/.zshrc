@@ -28,7 +28,7 @@ fco() {
 autoload -Uz colors
 colors
 #bind
-bindkey -v
+bindkey -e
 #completions
 autoload -Uz compinit; compinit
 setopt auto_list
