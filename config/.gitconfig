@@ -1,5 +1,7 @@
 [user]
 	useConfigOnly = true
+	name = y-yoneda
+	email = y-yoneda@sakura.ad.jp
 
 [includeIf "gitdir:~/github/"]
 	path = .gitconfig_github
@@ -7,3 +9,7 @@
 	path = .gitconfig_github
 [includeIf "gitdir:~/homenoc/"]
 	path = .gitconfig_homenoc
+[includeIf "gitdir:~/firstloop/"]
+	path = .gitconfig_firstloop
+[core]
+	autocrlf = false
