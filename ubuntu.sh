@@ -45,14 +45,14 @@ sudo gpasswd -a $USER docker
 sudo chmod 666 /var/run/docker.sock
 
 ##Docker-compose install
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 ##tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #zsh
 cp ~/.init/config/.zshrc ~/.zshrc
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+sh -c "$(curl -fsSL https://git.io/zinit-install)"
 
 go get github.com/justjanne/powerline-go
 
@@ -79,12 +79,6 @@ sudo tlp start
 
 #
 chsh -s /bin/zsh
-
-# Pulse Secure
-cd $HOME/Downloads/ && wget http://webdev.web3.technion.ac.il/docs/cis/public/ssl-vpn/ps-pulse-ubuntu-debian.deb
-
-cd $HOME/Downloads
-sudo apt install libnss3-tools && sudo dpkg -i ps-pulse-ubuntu-debian.deb
 
 # veracrypt
 sudo apt install veracrypt
