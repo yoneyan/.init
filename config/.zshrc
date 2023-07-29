@@ -54,7 +54,7 @@ setopt auto_cd
 
 #-------
 #zinit
-source ~/.zinit/bin/zinit.zsh
+source ~/.local/share/zinit/zinit.git/zinit.zsh
 autoload -Uz _zinit
 
 #plugin add
