@@ -1,7 +1,8 @@
 [user]
 	useConfigOnly = true
-	name = y-yoneda
-	email = y-yoneda@sakura.ad.jp
+	name = yoneyan
+	email = contact@yoneyan.net
+	signingkey = B4C713ED04D71D31692A60E6D09137AC4A0B833F
 
 [includeIf "gitdir:~/github/"]
 	path = .gitconfig_github
