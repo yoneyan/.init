@@ -10,13 +10,14 @@ sudo timedatectl set-local-rtc true
 #Japanese Tool
 yes | sudo apt install ibus-mozc
 #Programing Tool
-yes | sudo apt install npm golang
+yes | sudo apt install npm golang python3-dev python3-pip libmysqlclient-dev libldap2-dev libsasl2-dev
 sudo npm install -g yarn
 #Tool
-yes | sudo apt install fuse libfuse2 zfsutils-linux curl baobab git zsh tmux thunderbird vlc filezilla gnome-calendar 
+yes | sudo apt install zfsutils-linux curl baobab git zsh tmux thunderbird vlc filezilla gnome-calendar 
 yes | sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-vnc remmina-plugin-exec
-yes | sudo apt install guake
-yes | sudo apt install powertop tlp tlp-rdw
+yes | sudo add-apt-repository universe
+yes | sudo apt install libfuse2
+yes | sudo apt install guake powertop tlp tlp-rdw
 
 ##Docker install
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -34,8 +35,6 @@ go get github.com/justjanne/powerline-go
 
 ##Neovim install
 yes | sudo apt install neovim
-
-yes | sudo apt install python3-dev python3-pip
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -90,3 +89,6 @@ sudo sysctl -p
 
 # Finish
 yes | sudo apt-get autoremove
+
+# nap
+sudo snap install slack discord 
