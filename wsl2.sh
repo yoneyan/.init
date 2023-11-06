@@ -7,9 +7,6 @@ yes | sudo apt upgrade
 yes | sudo apt install golang git zsh tmux python3-pip npm
 sudo npm install -g yarn
 
-##tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 #zsh
 cp ~/.init/config/.zshrc ~/.zshrc
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
