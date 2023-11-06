@@ -3,14 +3,18 @@
 	name = yoneyan
 	email = contact@yoneyan.net
 	signingkey = B4C713ED04D71D31692A60E6D09137AC4A0B833F
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
 
-[includeIf "gitdir:~/github/"]
-	path = .gitconfig_github
-[includeIf "gitdir:~/.init/"]
-	path = .gitconfig_github
+
 [includeIf "gitdir:~/homenoc/"]
 	path = .gitconfig_homenoc
 [includeIf "gitdir:~/firstloop/"]
 	path = .gitconfig_firstloop
 [core]
 	autocrlf = false
+

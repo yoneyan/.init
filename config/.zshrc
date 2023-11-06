@@ -143,3 +143,6 @@ alias shimachan='firefox http://dogwood.is.oit.ac.jp/'
 
 
 PS1="%{$fg[cyan]%}[${USER}@${HOST%%.*} %1~]%(!.#.$)%{${reset_color%}%} "
+
+## WSL2
+export GPG_TTY=$(tty)
