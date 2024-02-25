@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 brew update -y && brew upgrade -y
-brew install go npm git curl wget neovim tmux zplug
+brew install go npm git curl wget neovim tmux zplug pkg-config python3
 sh -c "$(curl -fsSL https://git.io/zinit-install)"
 
 #zsh
