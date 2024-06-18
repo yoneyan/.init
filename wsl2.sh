@@ -34,3 +34,4 @@ chsh -s /bin/zsh
 
 # overwrite gitconfig
 sed -i "s|{ONEPASS_PROGRAM_PATH}|${ONEPASS_PROGRAM_PATH}|g" ~/.gitconfig*
+echo "	sshCommand = ssh.exe" >> ~/.gitconfig
