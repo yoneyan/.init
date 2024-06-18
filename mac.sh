@@ -21,4 +21,4 @@ cp -r ~/.init/config/.zshrc_mac ~/.zshrc
 cp config/.gitconfig* ~/
 
 # overwrite gitconfig
-sed -i "s|{ONEPASS_PROGRAM_PATH}|${ONEPASS_PROGRAM_PATH}|g" ~/.gitconfig*
+sed -i "" "s|{ONEPASS_PROGRAM_PATH}|${ONEPASS_PROGRAM_PATH}|g" ~/.gitconfig*
