@@ -1,0 +1,13 @@
+[user]
+  name = y-yoneda
+  email = y-yoneda@sakura.ad.jp
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIvGC6Vln2qdoGjG7hn6AZW8t85hyFsIjsInotnQgMCE
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = {ONEPASS_PROGRAM_PATH}
+
+[commit]
+  gpgsign = true

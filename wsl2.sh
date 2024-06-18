@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ONEPASS_PROGRAM_PATH=/mnt/c/Users/y-yoneda/AppData/Local/1Password/app/8/op-ssh-sign-wsl
+
 yes | sudo apt update
 yes | sudo apt upgrade
 
@@ -29,3 +31,6 @@ yes | sudo apt -y install mariadb-server mariadb-backup
 
 # default shell
 chsh -s /bin/zsh
+
+# overwrite gitconfig
+sed -i "s|{ONEPASS_PROGRAM_PATH}|${ONEPASS_PROGRAM_PATH}|g" ~/.gitconfig*

@@ -2,15 +2,16 @@
 	useConfigOnly = true
 	name = yoneyan
 	email = contact@yoneyan.net
-	signingkey = B4C713ED04D71D31692A60E6D09137AC4A0B833F
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILI97x+GKcLk2dNyl1+21aP39KTBDoAifQInhUFuqJj9
 [gpg]
-	program = gpg
+  format = ssh
+[gpg "ssh"]
+  program = {ONEPASS_PROGRAM_PATH}
 [commit]
-	gpgsign = true
-[tag]
-	gpgsign = true
+  gpgsign = true
 
-
+[includeIf "gitdir:~/sakura/"]
+	path = .gitconfig_sakura
 [includeIf "gitdir:~/homenoc/"]
 	path = .gitconfig_homenoc
 [includeIf "gitdir:~/firstloop/"]
