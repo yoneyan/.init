@@ -1,35 +1,34 @@
-#powerline-go
-function powerline_precmd() {
-    PS1="$(~/go/bin/powerline-go -condensed -cwd-max-depth 3 -error $? -shell zsh)"
+# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+fbr() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
+# fco - checkout git branch/tags
+fco() {
+  local tags branches target
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+    | sed '/^$/d') || return
+  tags=$(
+    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+  target=$(
+    (echo "$branches"; echo "$tags") |
+    fzf --no-hscroll --no-multi -n 2 \
+        --ansi) || return
+  git checkout $(awk '{print $2}' <<<"$target" )
 }
-
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
-
-
-##
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-autoload -U promptinit; promptinit
-
 
 #--------
 #enable color
 autoload -Uz colors
 colors
 #bind
-bindkey -v
+bindkey -e
 #completions
 autoload -Uz compinit; compinit
 setopt auto_list
@@ -54,69 +53,60 @@ setopt correct
 setopt auto_cd
 
 #-------
-#zplugin
-source ~/.zinit/bin/zinit.zsh
+#zinit
+source ~/.local/share/zinit/zinit.git/zinit.zsh
 autoload -Uz _zinit
 
 #plugin add
-zplug momo-lab/zsh-abbrev-alias
 # Two regular plugins loaded without tracking.
-zplug light zsh-users/zsh-autosuggestions
-zplug light zdharma/fast-syntax-highlighting
-
-# Plugin history-search-multi-word loaded with tracking.
-zplugin load zdharma/history-search-multi-word
-
-# Load the pure theme, with zsh-async library that's bundled with it.
-#zplug ice pick"async.zsh" src"pure.zsh"
-#zplug light sindresorhus/pure
-zplug load "mafredri/zsh-async"
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma/fast-syntax-highlighting
 
 # Binary release in archive, from GitHub-releases page.
 # After automatic unpacking it provides program "fzf".
-zplug ice from"gh-r" as"program"
-zplug load junegunn/fzf-bin
+zinit ice from"gh-r" as"program"
+zinit load junegunn/fzf-bin
 
 # One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
 # This is done by ice-mod `mv'{from} -> {to}'. There are multiple packages per
 # single version, for OS X, Linux and Windows – so ice-mod `bpick' is used to
 # select Linux package – in this case this is actually not needed, Zplugin will
 # grep operating system name and architecture automatically when there's no `bpick'.
-zplug ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
-zplug load docker/compose
+zinit ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
+zinit load docker/compose
 
 # Vim repository on GitHub – a typical source code that needs compilation – Zplugin
 # can manage it for you if you like, run `./configure` and other `make`, etc. stuff.
 # Ice-mod `pick` selects a binary program to add to $PATH. You could also install the
-# package under the path $ZPFX, see: http://zdharma.org/zplugin/wiki/Compiling-programs
-zplug ice as"program" atclone"rm -f src/auto/config.cache; ./configure" \
+# package under the path $ZPFX, see: http://zdharma.org/zinit/wiki/Compiling-programs
+zinit ice as"program" atclone"rm -f src/auto/config.cache; ./configure" \
     atpull"%atclone" make pick"src/vim"
-zplug light vim/vim
+zinit light vim/vim
 
 # Scripts that are built at install (there's single default make target, "install",
 # and it constructs scripts by `cat'ing a few files). The make'' ice could also be:
 # `make"install PREFIX=$ZPFX"`, if "install" wouldn't be the only, default target.
-zplug ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
-zplug light tj/git-extras
+zinit ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
+zinit light tj/git-extras
 
-#zplug snippet 'OMZ::lib/completion.zsh'
-zplug snippet 'OMZ::lib/compfix.zsh'
-zplug load "zsh-users/zsh-completions"
-zplug load "chrissicool/zsh-256color"
+#zinit snippet 'OMZ::lib/completion.zsh'
+zinit snippet 'OMZ::lib/compfix.zsh'
+zinit load "zsh-users/zsh-completions"
+zinit load "chrissicool/zsh-256color"
 
 #github
-zplug snippet 'OMZ::plugins/github/github.plugin.zsh'
-zplug snippet 'OMZ::plugins/git/git.plugin.zsh'
+zinit snippet 'OMZ::plugins/github/github.plugin.zsh'
+zinit snippet 'OMZ::plugins/git/git.plugin.zsh'
 #history
-zplug light zsh-users/zsh-history-substring-search
+zinit light zsh-users/zsh-history-substring-search
 #fast-syntax-highlighting
-zplug light zdharma/fast-syntax-highlighting
+zinit light zdharma/fast-syntax-highlighting
 #zsh-autosuggestions
 #source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 #zsh-completions
 #fpat=(~/.zsh/zsh-completions/src $fpath)
-zplug light paulirish/git-open
-zplug light mollifier/cd-gitroot
+zinit light paulirish/git-open
+zinit light mollifier/cd-gitroot
 autoload -Uz cd-gitroot
 
 
@@ -130,23 +120,42 @@ export BROWSER="/usr/bin/google-chrome-stable"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+#JAVA
+export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
+export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 
-#ls 
+
+#alias
 alias ll='ls -la'
+alias vi='nvim'
+alias clean='brew cleanup -s'
 
-#update
-alias up='sudo apt update -y && sudo apt upgrade -y'
-
-#LTE
-alias lteup='sh ~/.init/script/lte_mineo_start.sh'
-alias ltedown='sh ~/.init/script/lte_mineo_stop.sh'
-alias lte='sh ~/.init/script/lte.sh'
+alias java11="export JAVA_HOME=$JAVA_11_HOME"
+alias java8="export JAVA_HOME=$JAVA_8_HOME"
 
 #cd-gitroot
 alias c='cd-gitroot'
 
-#shimachan
-alias shimachan='firefox http://dogwood.is.oit.ac.jp/'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 ### End of Zinit's installer chunk
+
+
+PS1="%{$fg[cyan]%}[${USER}@${HOST%%.*} %1~]%(!.#.$)%{${reset_color%}%} "
+export GPG_TTY=$(tty)
+
+setopt nonomatch
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/y-yoneda/frameworks/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/y-yoneda/frameworks/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/y-yoneda/frameworks/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/y-yoneda/frameworks/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PATH="$PATH:$HOME/development/flutter/bin"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES

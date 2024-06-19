@@ -2,9 +2,11 @@
 
 ONEPASS_PROGRAM_PATH=/Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew update -y && brew upgrade -y
-brew install go npm git curl wget neovim tmux zplug pkg-config python3
-sh -c "$(curl -fsSL https://git.io/zinit-install)"
+brew install go npm git curl wget neovim tmux zplug pkg-config python3 git
+
+git clone https://github.com/
 
 #zsh
 sh -c "$(curl -fsSL https://git.io/zinit-install)"
@@ -16,8 +18,7 @@ mkdir ~/.config/nvim
 
 # Config
 cp -r ~/.init/config/init.vim ~/.config/nvim/init.vim
-cp -r ~/.init/config/.netrc ~/.netrc
-cp -r ~/.init/config/.zshrc_mac ~/.zshrc
+cp -r ~/.init/config/mac/.zshrc ~/.zshrc
 cp config/.gitconfig* ~/
 
 # overwrite gitconfig
